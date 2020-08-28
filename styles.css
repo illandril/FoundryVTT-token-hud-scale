@@ -1,11 +1,11 @@
 #token-hud .control-icon {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 #token-hud .status-effects {
   width: 152px;
   grid-template-columns: 38px 38px 38px 38px;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 #token-hud .status-effects .effect-control {
