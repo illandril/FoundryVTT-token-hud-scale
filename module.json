@@ -12,6 +12,7 @@
   "license": "./LICENSE",
   "url": "https://github.com/illandril/FoundryVTT-token-hud-scale",
   "bugs": "https://github.com/illandril/FoundryVTT-token-hud-scale/issues",
+  "changelog": "https://github.com/illandril/FoundryVTT-token-hud-scale/blob/master/CHANGELOG.md",
   "manifest": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/latest/download/module.json",
   "download": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/download/v1.0.1/illandril-token-hud-scale.zip"
 }
