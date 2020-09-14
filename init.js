@@ -7,7 +7,7 @@ Hooks.on('canvasReady', (canvas) => {
   });
 });
 
-Hooks.on('createToken', (parent, tokenData, options, userId) => {
+Hooks.on('createToken', (parent, tokenData) => {
   setTimeout(() => {
     const token = canvas.tokens.get(tokenData._id);
     token.effects.addListener('childAdded', (child) => {
@@ -16,6 +16,14 @@ Hooks.on('createToken', (parent, tokenData, options, userId) => {
     updateEffectScales(token);
   }, 1000);
 });
+
+Hooks.on('updateToken', (parent, tokenData) => {
+  setTimeout(() => {
+    const token = canvas.tokens.get(tokenData._id);
+    updateEffectScales(token);
+  }, 1000);
+});
+
 
 let pendingUpdates = {};
 
@@ -29,7 +37,7 @@ function fixEffectScale(token, child) {
 function updateEffectScales(token) {
   const numEffects = token.data.effects.length;
   if (numEffects > 0) {
-    const w = Math.floor(token.width / 3) - 1;
+    const w = Math.floor(token.w / 3) - 1;
     const bg = token.effects.children[0];
     bg.clear();
     bg.beginFill(0x000000, 0.6).lineStyle(1.0, 0x000000);
