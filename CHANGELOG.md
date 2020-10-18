@@ -1,3 +1,7 @@
+## [v1.0.2](https://github.com/illandril/FoundryVTT-token-hud-scale/releases/tag/v1.0.1) (2020-10-17)
+**Fixed Bugs:**
+* Increases support version to 0.7.4
+
 ## [v1.0.1](https://github.com/illandril/FoundryVTT-token-hud-scale/releases/tag/v1.0.1) (2020-09-13)
 **Fixed Bugs:**
 * [\#4](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/4) Fixed issue with scaling when using the Token Auras module
