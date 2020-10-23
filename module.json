@@ -6,7 +6,7 @@
   "description": "Improves the visibility of the Token HUD and Status Effect icons. More specifically, this increases the scale of the Token HUD by 50%, adjusts the size of token status effects so they fit 3 across for the token (60% larger than standard for 1:1 tokens, much larger than standard for double-sized tokens, slightly smaller than standard for half-size tokens), and increases the opacity of the background behind both the Token HUD and Status Effect icons.",
   "author": "Joe Spandrusyszyn",
   "minimumCoreVersion": "0.6.5",
-  "compatibleCoreVersion": "0.7.4",
+  "compatibleCoreVersion": "0.7.5",
   "styles": ["./styles.css"],
   "esmodules": ["./init.js"],
   "license": "./LICENSE",

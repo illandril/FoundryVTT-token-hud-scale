@@ -36,7 +36,9 @@ function fixEffectScale(token, child) {
 }
 
 function updateEffectScales(token) {
-  const numEffects = token.data.effects.length;
+  const tokenEffects = token.data.effects;
+  const actorEffects = token.actor && token.actor.temporaryEffects || [];
+  const numEffects = tokenEffects.length + actorEffects.length;
   if (numEffects > 0 && token.effects.children.length > 0) {
     const w = Math.floor(token.w / 3) - 1;
     const bg = token.effects.children[0];

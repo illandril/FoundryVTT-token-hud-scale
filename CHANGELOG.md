@@ -1,3 +1,7 @@
+## [v1.0.3](https://github.com/illandril/FoundryVTT-token-hud-scale/releases/tag/v1.0.3) (2020-10-23)
+**Fixed Bugs:**
+* [\#5](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/5) Fixed scaling issues in 0.7.5
+
 ## [v1.0.2](https://github.com/illandril/FoundryVTT-token-hud-scale/releases/tag/v1.0.2) (2020-10-17)
 **Fixed Bugs:**
 * Increases support version to 0.7.4
