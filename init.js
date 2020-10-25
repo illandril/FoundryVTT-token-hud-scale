@@ -36,6 +36,9 @@ function fixEffectScale(token, child) {
 }
 
 function countEffects(token) {
+  if(!token) {
+    return 0;
+  }
   const tokenEffects = token.data.effects;
   const actorEffects = token.actor && token.actor.temporaryEffects || [];
   let numEffects = tokenEffects.length;
