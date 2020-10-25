@@ -1,3 +1,7 @@
+## [v1.0.4](https://github.com/illandril/FoundryVTT-token-hud-scale/releases/tag/v1.0.4) (2020-10-25)
+**Fixed Bugs:**
+* [\#6](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/6) Fixed scaling issue with Overlay icons in 0.7.5
+
 ## [v1.0.3](https://github.com/illandril/FoundryVTT-token-hud-scale/releases/tag/v1.0.3) (2020-10-23)
 **Fixed Bugs:**
 * [\#5](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/5) Fixed scaling issues in 0.7.5
