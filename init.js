@@ -35,10 +35,20 @@ function fixEffectScale(token, child) {
   }, 10);
 }
 
-function updateEffectScales(token) {
+function countEffects(token) {
   const tokenEffects = token.data.effects;
   const actorEffects = token.actor && token.actor.temporaryEffects || [];
-  const numEffects = tokenEffects.length + actorEffects.length;
+  let numEffects = tokenEffects.length;
+  actorEffects.forEach(actorEffect => {
+    if ( !actorEffect.getFlag("core", "overlay") ) {
+      numEffects++;
+    }
+  });
+  return numEffects;
+}
+
+function updateEffectScales(token) {
+  const numEffects = countEffects(token);
   if (numEffects > 0 && token.effects.children.length > 0) {
     const w = Math.floor(token.w / 3) - 1;
     const bg = token.effects.children[0];
