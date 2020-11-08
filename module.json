@@ -1,12 +1,12 @@
 {
   "type": "module",
   "name": "illandril-token-hud-scale",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "title": "Illandril's Token HUD scaler",
   "description": "Improves the visibility of the Token HUD and Status Effect icons. More specifically, this increases the scale of the Token HUD by 50%, adjusts the size of token status effects so they fit 3 across for the token (60% larger than standard for 1:1 tokens, much larger than standard for double-sized tokens, slightly smaller than standard for half-size tokens), and increases the opacity of the background behind both the Token HUD and Status Effect icons.",
   "author": "Joe Spandrusyszyn",
   "minimumCoreVersion": "0.6.5",
-  "compatibleCoreVersion": "0.7.5",
+  "compatibleCoreVersion": "0.7.6",
   "styles": ["./styles.css"],
   "esmodules": ["./init.js"],
   "license": "./LICENSE",
@@ -14,5 +14,5 @@
   "bugs": "https://github.com/illandril/FoundryVTT-token-hud-scale/issues",
   "changelog": "https://github.com/illandril/FoundryVTT-token-hud-scale/blob/master/CHANGELOG.md",
   "manifest": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/latest/download/module.json",
-  "download": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/download/v1.0.4/illandril-token-hud-scale.zip"
+  "download": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/download/v1.0.5/illandril-token-hud-scale.zip"
 }
