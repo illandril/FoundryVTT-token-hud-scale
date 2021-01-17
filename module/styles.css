@@ -1,24 +1,33 @@
-#token-hud .control-icon {
+.illandril-token-hud-scale--darken-hud-button-bg #token-hud .control-icon {
   background: rgba(0, 0, 0, 0.8);
 }
 
-#token-hud .status-effects {
-  width: 152px;
-  grid-template-columns: 38px 38px 38px 38px;
+.illandril-token-hud-scale--darken-hud-button-bg #token-hud .status-effects {
   background: rgba(0, 0, 0, 0.8);
 }
 
-#token-hud .status-effects .effect-control {
-  width: 36px;
-  height: 36px;
+.illandril-token-hud-scale--darken-hud-button-bg #token-hud .attribute input {
+  background: rgba(0, 0, 0, 0.8);
 }
 
-#token-hud .col.right {
+
+.illandril-token-hud-scale--hud-button-scale #token-hud .col.right {
   transform: scale(1.5);
   right: -80px;
 }
 
-#token-hud .col.left {
+.illandril-token-hud-scale--hud-button-scale #token-hud .col.left {
   transform: scale(1.5);
   left: -80px;
+}
+
+
+.illandril-token-hud-scale--status-selector-scale #token-hud .status-effects {
+  width: 152px;
+  grid-template-columns: 38px 38px 38px 38px;
+}
+
+.illandril-token-hud-scale--status-selector-scale #token-hud .status-effects .effect-control {
+  width: 36px;
+  height: 36px;
 }

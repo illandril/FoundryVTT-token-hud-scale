@@ -1,18 +1,47 @@
 {
-  "type": "module",
   "name": "illandril-token-hud-scale",
-  "version": "1.0.6",
   "title": "Illandril's Token HUD scaler",
   "description": "Improves the visibility of the Token HUD and Status Effect icons. More specifically, this increases the scale of the Token HUD by 50%, adjusts the size of token status effects so they fit 3 across for the token (60% larger than standard for 1:1 tokens, much larger than standard for double-sized tokens, slightly smaller than standard for half-size tokens), and increases the opacity of the background behind both the Token HUD and Status Effect icons.",
-  "author": "Joe Spandrusyszyn",
-  "minimumCoreVersion": "0.6.5",
+  "version": "1.0.6",
+  "library": "false",
+  "manifestPlusVersion": "1.0.0",
+  "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "0.7.9",
+  "type": "module",
+  "authors": [
+    {
+      "name": "Joe Spandrusyszyn (illandril)",
+      "url": "https://github.com/illandril",
+      "email": "foundry-modules@illandril.net",
+      "discord": "joespan#3152",
+      "reddit": "u/illandril"
+    }
+  ],
+  "dependencies": [],
+  "conflicts": [],
+  "esmodules": ["./scripts/index.js"],
   "styles": ["./styles.css"],
-  "esmodules": ["./init.js"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
   "license": "./LICENSE",
   "url": "https://github.com/illandril/FoundryVTT-token-hud-scale",
   "bugs": "https://github.com/illandril/FoundryVTT-token-hud-scale/issues",
   "changelog": "https://github.com/illandril/FoundryVTT-token-hud-scale/blob/master/CHANGELOG.md",
   "manifest": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/latest/download/module.json",
-  "download": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/download/v1.0.6/illandril-token-hud-scale.zip"
+  "download": "https://github.com/illandril/FoundryVTT-token-hud-scale/releases/download/v1.0.6/illandril-token-hud-scale.zip",
+  "media": [
+    {
+      "type": "cover",
+      "url": "https://github.com/illandril/FoundryVTT-token-hud-scale/raw/master/screenshots/cover.png"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://github.com/illandril/FoundryVTT-token-hud-scale/raw/master/screenshots/example-a.png"
+    }
+  ]
 }
