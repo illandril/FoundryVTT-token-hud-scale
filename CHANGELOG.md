@@ -1,5 +1,18 @@
 # Changelog
 
+## [v1.1.1](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.1.1) (2021-02-03)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.1.0...v1.1.1)
+
+**Fixed&nbsp;Bugs**
+
+- Status icons flicker as the default size before being replaced by the resized versions [\#11](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/11)
+- Issue in 0.7.8, with tokens receiving multiple conditions in PF2 [\#8](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/8)
+
+**Other&nbsp;Changes**
+
+- Status effects no longer work [\#9](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/9)
+
 ## [v1.1.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.1.0) (2021-01-17)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.0.6...v1.1.0)
@@ -7,10 +20,6 @@
 **Enhancements**
 
 - Feature Request: Options for picking and choosing features. [\#7](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/7)
-
-**Other&nbsp;Changes**
-
-- Compatibility issue with token auras module [\#4](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/4)
 
 ## [v1.0.6](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.0.6) (2020-12-20)
 
@@ -23,6 +32,10 @@
 ## [v1.0.4](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.0.4) (2020-10-25)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.0.3...v1.0.4)
+
+**Fixed&nbsp;Bugs**
+
+- Conflict with Core functionality to set overlay condition icon, and Combat Utility Belt [\#6](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/6)
 
 ## [v1.0.3](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.0.3) (2020-10-23)
 
@@ -46,11 +59,11 @@
 
 **Fixed&nbsp;Bugs**
 
-- Conflict with Core functionality to set overlay condition icon, and Combat Utility Belt [\#6](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/6)
 - Download value in module.json is incorrect [\#1](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/1)
 
 **Other&nbsp;Changes**
 
+- Compatibility issue with token auras module [\#4](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/4)
 - Update compatibility for 0.6.6 [\#3](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/3)
 
 ## [v1.0.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.0.0) (2020-08-23)
