@@ -1,11 +1,14 @@
 import { log } from './module.js';
 import Settings, { SETTINGS_UPDATED } from './settings.js';
 
+const origDrawEffects = Token.prototype.drawEffects;
+Token.prototype.drawEffects = async function(...args) {
+  await origDrawEffects.apply(this, args);
+  updateEffectScales(this);
+};
+
 Hooks.on('canvasReady', (canvas) => {
   canvas.tokens.placeables.forEach((token) => {
-    token.effects.addListener('childAdded', (child) => {
-      fixEffectScale(token, child);
-    });
     updateEffectScales(token);
   });
 });
@@ -15,34 +18,6 @@ Hooks.on(SETTINGS_UPDATED, () => {
     updateEffectScales(token);
   });
 });
-
-Hooks.on('createToken', (parent, tokenData) => {
-  setTimeout(() => {
-    const token = canvas.tokens.get(tokenData._id);
-    if (token) {
-      token.effects.addListener('childAdded', (child) => {
-        fixEffectScale(token, child);
-      });
-      updateEffectScales(token);
-    }
-  }, 1000);
-});
-
-Hooks.on('updateToken', (parent, tokenData) => {
-  setTimeout(() => {
-    const token = canvas.tokens.get(tokenData._id);
-    updateEffectScales(token);
-  }, 1000);
-});
-
-let pendingUpdates = {};
-
-function fixEffectScale(token, child) {
-  clearTimeout(pendingUpdates[token.id]);
-  pendingUpdates[token.id] = setTimeout(() => {
-    updateEffectScales(token);
-  }, 10);
-}
 
 function countEffects(token) {
   if (!token) {
