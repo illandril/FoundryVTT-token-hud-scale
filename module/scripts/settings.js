@@ -2,6 +2,9 @@ import { log, KEY as MODULE_KEY } from './module.js';
 
 const settingsList = [];
 
+const SETTINGS_VERSION = 1;
+const SETTINGS_VERSION_KEY = 'settingsVersion';
+
 export const SETTINGS_UPDATED = MODULE_KEY + '.SettingsUpdated';
 
 const refresh = () => {
@@ -70,8 +73,10 @@ class RangeSetting extends Setting {
 
 const Settings = {
   EffectIconsPerRow: new RangeSetting('effectIconsPerRow', 3, 2, 10, 1, { hasHint: true }),
-  EnableHUDButtonScale: new BooleanSetting('enableHUDButtonScale', true, { hasHint: true }),
-  EnableStatusSelectorScale: new BooleanSetting('enableStatusSelectorScale', true, { hasHint: true }),
+  HUDButtonScale: new RangeSetting('hudButtonScale', 1.5, 1, 5, 0.25, { hasHint: true }),
+  EnableStatusSelectorScale: new BooleanSetting('enableStatusSelectorScale', true, {
+    hasHint: true,
+  }),
   DarkenHUDButtonBG: new BooleanSetting('darkenHUDButtonBG', true, { hasHint: true }),
 };
 
@@ -82,4 +87,30 @@ Hooks.once('init', () => {
   settingsList.forEach((setting) => {
     setting.register();
   });
+
+  game.settings.register(MODULE_KEY, SETTINGS_VERSION_KEY, {
+    scope: 'world',
+    config: false,
+    type: Number,
+    default: 0,
+  });
+  const previousVersion = game.settings.get(MODULE_KEY, SETTINGS_VERSION_KEY);
+  if (previousVersion < SETTINGS_VERSION) {
+    if (previousVersion < 1) {
+      game.settings.register(MODULE_KEY, 'enableHUDButtonScale', {
+        scope: 'world',
+        config: false,
+        type: Boolean,
+        default: false,
+      });
+      if (!game.settings.get(MODULE_KEY, 'enableHUDButtonScale')) {
+        log.info(`Migrating old enableHUDButtonScale setting - setting hudButtonScale to 1`);
+        game.settings.set(MODULE_KEY, Settings.HUDButtonScale.key, 1);
+      }
+    }
+    game.settings.set(MODULE_KEY, SETTINGS_VERSION_KEY, SETTINGS_VERSION);
+    log.info(`Settings Initialized - upgraded from v${previousVersion} to v${SETTINGS_VERSION}`);
+  } else {
+    log.info(`Settings Initialized - already on ${SETTINGS_VERSION}`);
+  }
 });

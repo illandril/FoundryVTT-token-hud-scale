@@ -2,7 +2,7 @@ import { log } from './module.js';
 import Settings, { SETTINGS_UPDATED } from './settings.js';
 
 const origDrawEffects = Token.prototype.drawEffects;
-Token.prototype.drawEffects = async function(...args) {
+Token.prototype.drawEffects = async function (...args) {
   await origDrawEffects.apply(this, args);
   updateEffectScales(this);
 };
@@ -14,9 +14,11 @@ Hooks.on('canvasReady', (canvas) => {
 });
 
 Hooks.on(SETTINGS_UPDATED, () => {
-  canvas.tokens.placeables.forEach((token) => {
-    updateEffectScales(token);
-  });
+  if (canvas && canvas.tokens) {
+    canvas.tokens.placeables.forEach((token) => {
+      updateEffectScales(token);
+    });
+  }
 });
 
 function countEffects(token) {
