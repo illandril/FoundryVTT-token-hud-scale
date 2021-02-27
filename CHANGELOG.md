@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.2.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.2.0) (2021-02-27)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.1.2...v1.2.0)
+
+**Enhancements**
+
+- Request for more token HUD Scaling [\#13](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/13)
+
+**Other&nbsp;Changes**
+
+- Bugs out when also using Thandul's Togglable Effects [\#10](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/10)
+
 ## [v1.1.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.1.2) (2021-02-18)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.1.1...v1.1.2)
