@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.3.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.0) (2021-04-02)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.2.0...v1.3.0)
+
 ## [v1.2.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.2.0) (2021-02-27)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.1.2...v1.2.0)
@@ -39,6 +43,7 @@
 
 **Enhancements**
 
+- Feature Request: Scale based on Zoom Factor.  [\#14](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/14)
 - Feature Request: Options for picking and choosing features. [\#7](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/7)
 
 ## [v1.0.6](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.0.6) (2020-12-20)
