@@ -5,6 +5,9 @@
   "illandril-token-hud-scale.setting.hudButtonScale.label": "Token HUD Buttons Scale",
   "illandril-token-hud-scale.setting.hudButtonScale.hint": "Select the scale (multiplier relative to the default scale) of the Token HUD Buttons (Toggle Visibility, Assign Status Effects, Toggle Combat State, etc). Set to 1 to leave the scale unchanged from the default scale.",
 
+  "illandril-token-hud-scale.setting.enableStaticSizedHUD.label": "Static Sized HUD",
+  "illandril-token-hud-scale.setting.enableStaticSizedHUD.hint": "Keep the size of the HUD consistent when you zoom in and out of the scene (as opposed to getting smaller as you zoom out from the scene, and larger as you zoom in).",
+
   "illandril-token-hud-scale.setting.enableStatusSelectorScale.label": "Scale Status Effect Assignment Icons",
   "illandril-token-hud-scale.setting.enableStatusSelectorScale.hint": "Increases the size of the Status Effect icons shown under the Assign Status Effects button to match the size of the other Token HUD Buttons.",
 

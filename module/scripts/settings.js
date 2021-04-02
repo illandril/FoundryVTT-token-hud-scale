@@ -74,6 +74,7 @@ class RangeSetting extends Setting {
 const Settings = {
   EffectIconsPerRow: new RangeSetting('effectIconsPerRow', 3, 2, 10, 1, { hasHint: true }),
   HUDButtonScale: new RangeSetting('hudButtonScale', 1.5, 1, 5, 0.25, { hasHint: true }),
+  EnableStaticSizedHUD: new BooleanSetting('enableStaticSizedHUD', true, { hasHint: true }),
   EnableStatusSelectorScale: new BooleanSetting('enableStatusSelectorScale', true, {
     hasHint: true,
   }),
