@@ -10,20 +10,6 @@
   background: rgba(0, 0, 0, 0.8);
 }
 
-:root {
-  --illandril-token-hud-scale--hud-button-scale: 1.5;
-}
-
-.illandril-token-hud-scale--hud-button-scale #token-hud .col.right {
-  transform: scale(var(--illandril-token-hud-scale--hud-button-scale));
-  right: calc(-50px - 20px * var(--illandril-token-hud-scale--hud-button-scale));
-}
-
-.illandril-token-hud-scale--hud-button-scale #token-hud .col.left {
-  transform: scale(var(--illandril-token-hud-scale--hud-button-scale));
-  left: calc(-50px - 20px * var(--illandril-token-hud-scale--hud-button-scale));
-}
-
 .illandril-token-hud-scale--status-selector-scale #token-hud .status-effects {
   width: 152px;
   grid-template-columns: 38px 38px 38px 38px;

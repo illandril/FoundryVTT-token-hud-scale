@@ -2,7 +2,7 @@ import { log, KEY as MODULE_KEY } from './module.js';
 
 const settingsList = [];
 
-const SETTINGS_VERSION = 1;
+const SETTINGS_VERSION = 2;
 const SETTINGS_VERSION_KEY = 'settingsVersion';
 
 export const SETTINGS_UPDATED = MODULE_KEY + '.SettingsUpdated';
@@ -73,7 +73,7 @@ class RangeSetting extends Setting {
 
 const Settings = {
   EffectIconsPerRow: new RangeSetting('effectIconsPerRow', 3, 2, 10, 1, { hasHint: true }),
-  HUDButtonScale: new RangeSetting('hudButtonScale', 1.5, 1, 5, 0.25, { hasHint: true }),
+  HUDButtonScale: new RangeSetting('hudButtonScale', 1.0, 0.25, 5, 0.25, { hasHint: true }),
   EnableStaticSizedHUD: new BooleanSetting('enableStaticSizedHUD', true, { hasHint: true }),
   EnableStatusSelectorScale: new BooleanSetting('enableStatusSelectorScale', true, {
     hasHint: true,
@@ -84,6 +84,7 @@ const Settings = {
 Object.freeze(Settings);
 export default Settings;
 
+let upgradeNotificationKey = null;
 Hooks.once('init', () => {
   settingsList.forEach((setting) => {
     setting.register();
@@ -109,9 +110,18 @@ Hooks.once('init', () => {
         game.settings.set(MODULE_KEY, Settings.HUDButtonScale.key, 1);
       }
     }
+    if (previousVersion < 2) {
+      upgradeNotificationKey = 'v2';
+    }
     game.settings.set(MODULE_KEY, SETTINGS_VERSION_KEY, SETTINGS_VERSION);
     log.info(`Settings Initialized - upgraded from v${previousVersion} to v${SETTINGS_VERSION}`);
   } else {
     log.info(`Settings Initialized - already on ${SETTINGS_VERSION}`);
   }
 });
+
+Hooks.once('ready', () => {
+  if(upgradeNotificationKey !== null) {
+    ui.notifications.info(game.i18n.localize(`${MODULE_KEY}.upgradeNotification.${upgradeNotificationKey}`));
+  }
+})
