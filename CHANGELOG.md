@@ -1,8 +1,28 @@
 # Changelog
 
+## [v1.3.1](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.1) (2021-04-07)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.0...v1.3.1)
+
+**Enhancements**
+
+- Expand the Scale to allow values \< 1 [\#17](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/17)
+
+**Fixed&nbsp;Bugs**
+
+- Static Size HUD causes massive framedrop \< 10 even when HUD not shown [\#15](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/15)
+
+**Other&nbsp;Changes**
+
+- Newest version of Token HUD doesn't rescale additional mod buttons in the HUD if they use other row. [\#16](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/16)
+
 ## [v1.3.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.0) (2021-04-02)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.2.0...v1.3.0)
+
+**Enhancements**
+
+- Feature Request: Scale based on Zoom Factor.  [\#14](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/14)
 
 ## [v1.2.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.2.0) (2021-02-27)
 
@@ -43,7 +63,6 @@
 
 **Enhancements**
 
-- Feature Request: Scale based on Zoom Factor.  [\#14](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/14)
 - Feature Request: Options for picking and choosing features. [\#7](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/7)
 
 ## [v1.0.6](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.0.6) (2020-12-20)
