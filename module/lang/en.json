@@ -1,6 +1,9 @@
 {
-  "illandril-token-hud-scale.setting.effectIconsPerRow.label": "Effect Icons per Row",
-  "illandril-token-hud-scale.setting.effectIconsPerRow.hint": "Adjusts the scale of Effect icons so that this many icons appear per row of icons (as shown on the token).",
+  "illandril-token-hud-scale.setting.effectIconsPerRow.label": "Effect Icons per Row / Col",
+  "illandril-token-hud-scale.setting.effectIconsPerRow.hint": "Adjusts the scale of Effect icons so that this many icons appear per row (column if Horizontal Effect Icons is uncheck) of icons (as shown on the token).",
+
+  "illandril-token-hud-scale.setting.effectIconsHorizontal.label": "Horizontal Effect Icons",
+  "illandril-token-hud-scale.setting.effectIconsHorizontal.hint": "Show the Effect icons horizontally. Uncheck to show the Effect icons vertically.",
 
   "illandril-token-hud-scale.setting.hudButtonScale.label": "Token HUD Buttons Scale",
   "illandril-token-hud-scale.setting.hudButtonScale.hint": "Select the scale (multiplier relative to the default scale) of the Token HUD Buttons (Toggle Visibility, Assign Status Effects, Toggle Combat State, etc). Set to 1 to leave the scale unchanged from the default scale.",

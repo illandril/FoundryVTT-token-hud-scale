@@ -40,10 +40,12 @@ function updateEffectScales(token) {
   const iconsPerRow = Settings.EffectIconsPerRow.get();
   const numEffects = countEffects(token);
   if (numEffects > 0 && token.effects.children.length > 0) {
-    const w = Math.floor(token.w / iconsPerRow);
+    const horizontal = Settings.EffectIconsHorizontal.get();
+    const w = Math.floor((horizontal ? token.w : token.h) / iconsPerRow);
     const bg = token.effects.children[0];
     bg.clear();
     bg.beginFill(0x000000, 0.6).lineStyle(1.0, 0x000000);
+
     token.effects.children.forEach((effectIcon, i) => {
       if (i === 0) {
         // BG
@@ -53,8 +55,8 @@ function updateEffectScales(token) {
         const x = (ei % iconsPerRow) * w;
         const y = Math.floor(ei / iconsPerRow) * w;
         effectIcon.width = effectIcon.height = w;
-        effectIcon.position.x = x;
-        effectIcon.position.y = y;
+        effectIcon.position.x = horizontal ? x : y;
+        effectIcon.position.y = horizontal ? y : x;
         bg.drawRoundedRect(
           effectIcon.position.x,
           effectIcon.position.y,
