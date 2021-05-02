@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.3.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.2) (2021-05-02)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.1...v1.3.2)
+
+**Enhancements**
+
+- Status Icon Location on Token [\#19](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/19)
+
 ## [v1.3.1](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.1) (2021-04-07)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.0...v1.3.1)
