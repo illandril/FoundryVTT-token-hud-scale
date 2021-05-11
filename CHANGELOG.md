@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.3.3](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.3) (2021-05-11)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.2...v1.3.3)
+
+**Other&nbsp;Changes**
+
+- Icons are duplicated in PF2E 1.13.1 [\#20](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/20)
+
 ## [v1.3.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.2) (2021-05-02)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.1...v1.3.2)
