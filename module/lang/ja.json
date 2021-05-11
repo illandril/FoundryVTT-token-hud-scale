@@ -1,0 +1,21 @@
+{
+  "illandril-token-hud-scale.setting.effectIconsPerRow.label": "状態アイコンのサイズ（一列あたりの数）",
+  "illandril-token-hud-scale.setting.effectIconsPerRow.hint": "ここで指定した数が一列（または一行）に並ぶ大きさに、コマの上に表示される状態アイコンのサイズを調整します。",
+
+  "illandril-token-hud-scale.setting.effectIconsHorizontal.label": "状態アイコンを水平配置",
+  "illandril-token-hud-scale.setting.effectIconsHorizontal.hint": "状態アイコンが横並びで表示されるようになります。チェックを外すと縦並びになります。",
+
+  "illandril-token-hud-scale.setting.hudButtonScale.label": "トークンHUDのボタンサイズ",
+  "illandril-token-hud-scale.setting.hudButtonScale.hint": "トークンHUDボタン（非表示ボタン / 状態設定ボタン / 戦闘参加ボタンなど）の大きさを、標準サイズに対する倍率で指定します（つまり1にすると標準と変わりません）。",
+
+  "illandril-token-hud-scale.setting.enableStaticSizedHUD.label": "トークンHUDのサイズを固定する",
+  "illandril-token-hud-scale.setting.enableStaticSizedHUD.hint": "トークンHUDの大きさが、シーンを拡大/縮小しても一定に保たれるようになります（つまり拡大すると相対的に小さく、縮小すると相対的に大きくなるわけです）。",
+
+  "illandril-token-hud-scale.upgradeNotification.v2": "Illandril's Token HUD Scaleが更新されました。トークンHUDのスケーリング方法に大きな変更があるので設定を確認してください。ほとんどの場合、小さいスケール（0.5～1.5）の固定サイズHUDか、大きいスケール（1.5以上）の非固定サイズHUDのどちらかになるでしょう。",
+
+  "illandril-token-hud-scale.setting.enableStatusSelectorScale.label": "状態一覧のアイコンを拡大する",
+  "illandril-token-hud-scale.setting.enableStatusSelectorScale.hint": "状態設定ボタンを押したときに表示される状態一覧のアイコン拡大表示します。大きさはトークンHUDの各ボタンのサイズと同等で、この設定に合わせます。",
+
+  "illandril-token-hud-scale.setting.darkenHUDButtonBG.label": "トークンHUDの背景を暗くする",
+  "illandril-token-hud-scale.setting.darkenHUDButtonBG.hint": "トークンHUDボタンの背景色の透過率を下げて見やすくします。"
+}
