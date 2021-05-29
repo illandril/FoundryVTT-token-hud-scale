@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.4.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.0) (2021-05-29)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.3...v1.4.0)
+
+**Other&nbsp;Changes**
+
+- Support Foundry 0.8.x [\#23](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/23)
+- Static HUD math has issues [\#21](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/21)
+
 ## [v1.3.3](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.3.3) (2021-05-11)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.2...v1.3.3)
