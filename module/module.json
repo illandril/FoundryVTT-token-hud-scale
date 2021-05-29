@@ -4,16 +4,18 @@
     "description": "Improves the visibility of the Token HUD and Status Effect icons. More specifically, this increases the scale of the Token HUD by 50%, adjusts the size of token status effects so they fit 3 across for the token (60% larger than standard for 1:1 tokens, much larger than standard for double-sized tokens, slightly smaller than standard for half-size tokens), and increases the opacity of the background behind both the Token HUD and Status Effect icons.",
     "version": "1.3.3",
     "library": "false",
-    "manifestPlusVersion": "1.0.0",
-    "minimumCoreVersion": "0.7.9",
-    "compatibleCoreVersion": "0.7.9",
+    "manifestPlusVersion": "1.2.0",
+    "minimumCoreVersion": "0.8.5",
+    "compatibleCoreVersion": "0.8.5",
     "type": "module",
+    "author": "Joe Spandrusyszyn (illandril)",
     "authors": [
         {
             "name": "Joe Spandrusyszyn (illandril)",
             "url": "https://github.com/illandril",
             "email": "foundry-modules@illandril.net",
             "discord": "joespan#3152",
+            "ko-fi": "illandril",
             "patreon": "illandril",
             "reddit": "u/illandril"
         }

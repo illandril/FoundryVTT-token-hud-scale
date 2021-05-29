@@ -97,6 +97,9 @@ Hooks.once('init', () => {
     type: Number,
     default: 0,
   });
+});
+
+Hooks.once('ready', () => {
   const previousVersion = game.settings.get(MODULE_KEY, SETTINGS_VERSION_KEY);
   if (previousVersion < SETTINGS_VERSION) {
     if (previousVersion < 1) {
@@ -119,9 +122,7 @@ Hooks.once('init', () => {
   } else {
     log.info(`Settings Initialized - already on ${SETTINGS_VERSION}`);
   }
-});
 
-Hooks.once('ready', () => {
   if(upgradeNotificationKey !== null) {
     ui.notifications.info(game.i18n.localize(`${MODULE_KEY}.upgradeNotification.${upgradeNotificationKey}`));
   }
