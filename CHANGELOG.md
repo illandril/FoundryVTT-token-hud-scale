@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.4.1](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.1) (2021-06-18)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.4.0...v1.4.1)
+
+**Other&nbsp;Changes**
+
+- Notification message keeps showing up, can be annoying [\#22](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/22)
+
 ## [v1.4.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.0) (2021-05-29)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.3.3...v1.4.0)
