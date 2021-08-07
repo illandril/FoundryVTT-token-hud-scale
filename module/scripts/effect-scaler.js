@@ -9,14 +9,14 @@ Token.prototype.drawEffects = async function (...args) {
 
 Hooks.on('canvasReady', (canvas) => {
   canvas.tokens.placeables.forEach((token) => {
-    updateEffectScales(token);
+    token.drawEffects();
   });
 });
 
 Hooks.on(SETTINGS_UPDATED, () => {
   if (canvas && canvas.tokens) {
     canvas.tokens.placeables.forEach((token) => {
-      updateEffectScales(token);
+      token.drawEffects();
     });
   }
 });
@@ -46,27 +46,32 @@ function updateEffectScales(token) {
     bg.clear();
     bg.beginFill(0x000000, 0.6).lineStyle(1.0, 0x000000);
 
-    token.effects.children.forEach((effectIcon, i) => {
-      if (i === 0) {
-        // BG
-      } else if (i <= numEffects) {
-        // Effect icon
-        const ei = i - 1;
-        const x = (ei % iconsPerRow) * w;
-        const y = Math.floor(ei / iconsPerRow) * w;
-        effectIcon.width = effectIcon.height = w;
-        effectIcon.position.x = horizontal ? x : y;
-        effectIcon.position.y = horizontal ? y : x;
-        bg.drawRoundedRect(
-          effectIcon.position.x,
-          effectIcon.position.y,
-          effectIcon.width,
-          effectIcon.width,
-          2
-        );
-      } else {
-        // Overlay icon
+    // Exclude the background and overlay
+    const effectIcons = token.effects.children.slice(1, 1 + numEffects);
+
+    // Effect icons aren't necessarily in the order they appear... sort them so they are
+    // (Order is very important in some cases, like GURPS manuevers - see Issue #26)
+    effectIcons.sort((e1, e2) => {
+      if(e1.position.x === e2.position.x) {
+        return e1.position.y - e2.position.y;
       }
+      return e1.position.x - e2.position.x;
+    });
+
+    // Reposition and scale them
+    effectIcons.forEach((effectIcon, i) => {
+      const x = (i % iconsPerRow) * w;
+      const y = Math.floor(i / iconsPerRow) * w;
+      effectIcon.width = effectIcon.height = w;
+      effectIcon.position.x = horizontal ? x : y;
+      effectIcon.position.y = horizontal ? y : x;
+      bg.drawRoundedRect(
+        effectIcon.position.x,
+        effectIcon.position.y,
+        effectIcon.width,
+        effectIcon.width,
+        2
+      );
     });
   }
 }
