@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.4.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.2) (2021-08-07)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.4.1...v1.4.2)
+
+**Fixed&nbsp;Bugs**
+
+- Keep preferred ordering for status effect icons [\#26](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/26)
+
+**Other&nbsp;Changes**
+
+- \[BUG\] Option for static UI is reversed [\#25](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/25)
+
 ## [v1.4.1](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.1) (2021-06-18)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.4.0...v1.4.1)
