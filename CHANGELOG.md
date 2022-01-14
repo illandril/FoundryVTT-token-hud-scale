@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.4.3](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.3) (2022-01-14)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.4.2...v1.4.3)
+
+**Fixed&nbsp;Bugs**
+
+- \[BUG\] Canvas drawing failed for the tokenlayer [\#28](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/28)
+- \[BUG\] Tokens with Conditions cannot be selected once dragged to map [\#27](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/27)
+
 ## [v1.4.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.2) (2021-08-07)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.4.1...v1.4.2)
