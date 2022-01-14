@@ -39,15 +39,16 @@ function countEffects(token) {
 function updateEffectScales(token) {
   const iconsPerRow = Settings.EffectIconsPerRow.get();
   const numEffects = countEffects(token);
-  if (numEffects > 0 && token.effects.children.length > 0) {
+  const effectsHUD = token.hud && token.hud.effects || token.effects;
+  if (numEffects > 0 && effectsHUD.children.length > 0) {
     const horizontal = Settings.EffectIconsHorizontal.get();
     const w = Math.floor((horizontal ? token.w : token.h) / iconsPerRow);
-    const bg = token.effects.children[0];
+    const bg = effectsHUD.children[0];
     bg.clear();
     bg.beginFill(0x000000, 0.6).lineStyle(1.0, 0x000000);
 
     // Exclude the background and overlay
-    const effectIcons = token.effects.children.slice(1, 1 + numEffects);
+    const effectIcons = effectsHUD.children.slice(1, 1 + numEffects);
 
     // Effect icons aren't necessarily in the order they appear... sort them so they are
     // (Order is very important in some cases, like GURPS manuevers - see Issue #26)
