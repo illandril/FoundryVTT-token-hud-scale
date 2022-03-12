@@ -1,12 +1,19 @@
 # Changelog
 
+## [v1.5.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.5.0) (2022-03-12)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.4.3...v1.5.0)
+
+**Enhancements**
+
+- Option to set different numbers of effect Icons per row/column based on token size [\#30](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/30)
+
 ## [v1.4.3](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.3) (2022-01-14)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.4.2...v1.4.3)
 
 **Fixed&nbsp;Bugs**
 
-- \[BUG\] Canvas drawing failed for the tokenlayer [\#28](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/28)
 - \[BUG\] Tokens with Conditions cannot be selected once dragged to map [\#27](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/27)
 
 ## [v1.4.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.4.2) (2021-08-07)
@@ -15,6 +22,7 @@
 
 **Fixed&nbsp;Bugs**
 
+- \[BUG\] Canvas drawing failed for the tokenlayer [\#28](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/28)
 - Keep preferred ordering for status effect icons [\#26](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/26)
 
 **Other&nbsp;Changes**
