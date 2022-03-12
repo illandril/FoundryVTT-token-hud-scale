@@ -1,6 +1,6 @@
 {
-  "illandril-token-hud-scale.setting.effectIconsPerRow.label": "Effect Icons per Row / Col",
-  "illandril-token-hud-scale.setting.effectIconsPerRow.hint": "Adjusts the scale of Effect icons so that this many icons appear per row (column if Horizontal Effect Icons is uncheck) of icons (as shown on the token).",
+  "illandril-token-hud-scale.setting.effectIconsPerRow.label": "Effect Icons per Grid Size",
+  "illandril-token-hud-scale.setting.effectIconsPerRow.hint": "Adjusts the scale of Effect icons so that this many icons will fit in a single row or column on a 1x1 token (more will fit on larger tokens, and fewer on smaller tokens).",
 
   "illandril-token-hud-scale.setting.effectIconsHorizontal.label": "Horizontal Effect Icons",
   "illandril-token-hud-scale.setting.effectIconsHorizontal.hint": "Show the Effect icons horizontally. Uncheck to show the Effect icons vertically.",

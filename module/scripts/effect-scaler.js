@@ -37,12 +37,13 @@ function countEffects(token) {
 }
 
 function updateEffectScales(token) {
-  const iconsPerRow = Settings.EffectIconsPerRow.get();
   const numEffects = countEffects(token);
   const effectsHUD = token.hud && token.hud.effects || token.effects;
   if (numEffects > 0 && effectsHUD.children.length > 0) {
     const horizontal = Settings.EffectIconsHorizontal.get();
-    const w = Math.floor((horizontal ? token.w : token.h) / iconsPerRow);
+    const iconsPerRow = Math.ceil(Settings.EffectIconsPerRow.get() * (horizontal ? token.data.width : token.data.height));
+
+    const w = (horizontal ? token.w : token.h) / iconsPerRow;
     const bg = effectsHUD.children[0];
     bg.clear();
     bg.beginFill(0x000000, 0.6).lineStyle(1.0, 0x000000);
