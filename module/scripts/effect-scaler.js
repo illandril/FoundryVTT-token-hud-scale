@@ -40,7 +40,9 @@ function updateEffectScales(token) {
   const numEffects = countEffects(token);
   const effectsHUD = token.hud && token.hud.effects || token.effects;
   if (numEffects > 0 && effectsHUD.children.length > 0) {
-    const horizontal = Settings.EffectIconsHorizontal.get();
+    const layout = Settings.EffectIconsLayout.get();
+    const above = layout === 'above';
+    const horizontal = above || layout === 'horizontal';
     const iconsPerRow = Math.ceil(Settings.EffectIconsPerRow.get() * (horizontal ? token.data.width : token.data.height));
 
     const w = (horizontal ? token.w : token.h) / iconsPerRow;
@@ -63,7 +65,10 @@ function updateEffectScales(token) {
     // Reposition and scale them
     effectIcons.forEach((effectIcon, i) => {
       const x = (i % iconsPerRow) * w;
-      const y = Math.floor(i / iconsPerRow) * w;
+      let y = Math.floor(i / iconsPerRow) * w;
+      if(above) {
+        y = y * -1 - w;
+      }
       effectIcon.width = effectIcon.height = w;
       effectIcon.position.x = horizontal ? x : y;
       effectIcon.position.y = horizontal ? y : x;

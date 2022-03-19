@@ -2,7 +2,7 @@ import { log, KEY as MODULE_KEY } from './module.js';
 
 const settingsList = [];
 
-const SETTINGS_VERSION = 2;
+const SETTINGS_VERSION = 3;
 const SETTINGS_VERSION_KEY = 'settingsVersion';
 
 export const SETTINGS_UPDATED = MODULE_KEY + '.SettingsUpdated';
@@ -71,9 +71,34 @@ class RangeSetting extends Setting {
   }
 }
 
+class ChoiceSetting extends Setting {
+  constructor(key, defaultValue, choices, options = {}) {
+    super(
+      String,
+      key,
+      defaultValue,
+      mergeObject(
+        options,
+        {
+          choices,
+        },
+        {
+          inplace: false,
+        }
+      )
+    );
+  }
+}
+
+const EffectIconLayouts = Object.freeze({
+  horizontal: `${MODULE_KEY}.setting.effectIconsLayout.choice_horizontal`,
+  vertical: `${MODULE_KEY}.setting.effectIconsLayout.choice_vertical`,
+  above: `${MODULE_KEY}.setting.effectIconsLayout.choice_above`,
+});
+
 const Settings = {
   EffectIconsPerRow: new RangeSetting('effectIconsPerRow', 3, 2, 10, 1, { hasHint: true }),
-  EffectIconsHorizontal: new BooleanSetting('effectIconsHorizontal', true, { hasHint: true }),
+  EffectIconsLayout: new ChoiceSetting('effectIconsLayout', 'horizontal', EffectIconLayouts, { hasHint: true }),
   HUDButtonScale: new RangeSetting('hudButtonScale', 1.0, 0.25, 5, 0.25, { hasHint: true }),
   EnableStaticSizedHUD: new BooleanSetting('enableStaticSizedHUD', true, { hasHint: true }),
   EnableStatusSelectorScale: new BooleanSetting('enableStatusSelectorScale', true, {
@@ -116,6 +141,18 @@ Hooks.once('ready', () => {
     }
     if (previousVersion < 2) {
       upgradeNotificationKey = 'v2';
+    }
+    if (previousVersion < 3) {
+      game.settings.register(MODULE_KEY, 'effectIconsHorizontal', {
+        scope: 'world',
+        config: false,
+        type: Boolean,
+        default: true,
+      });
+      if (!game.settings.get(MODULE_KEY, 'effectIconsHorizontal')) {
+        log.info(`Migrating old effectIconsHorizontal setting - setting effectIconsLayout to vertical`);
+        game.settings.set(MODULE_KEY, Settings.EffectIconsLayout.key, 'vertical');
+      }
     }
     game.settings.set(MODULE_KEY, SETTINGS_VERSION_KEY, SETTINGS_VERSION);
     log.info(`Settings Initialized - upgraded from v${previousVersion} to v${SETTINGS_VERSION}`);
