@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.0.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.0.0) (2022-08-07)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.5.1...v2.0.0)
+
+**Fixed&nbsp;Bugs**
+
+- \[BUG\] Occasionaly exception  "TypeError: Cannot read properties of null \(reading 'drawShape'\)" [\#34](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/34)
+
 ## [v1.5.1](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v1.5.1) (2022-03-19)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v1.5.0...v1.5.1)
