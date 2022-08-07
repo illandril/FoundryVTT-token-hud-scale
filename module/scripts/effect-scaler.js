@@ -25,7 +25,7 @@ function countEffects(token) {
   if (!token) {
     return 0;
   }
-  const tokenEffects = token.data.effects;
+  const tokenEffects = token.document.effects;
   const actorEffects = (token.actor && token.actor.temporaryEffects) || [];
   let numEffects = tokenEffects.length;
   actorEffects.forEach((actorEffect) => {
@@ -43,7 +43,7 @@ function updateEffectScales(token) {
     const layout = Settings.EffectIconsLayout.get();
     const above = layout === 'above';
     const horizontal = above || layout === 'horizontal';
-    const iconsPerRow = Math.ceil(Settings.EffectIconsPerRow.get() * (horizontal ? token.data.width : token.data.height));
+    const iconsPerRow = Math.ceil(Settings.EffectIconsPerRow.get() * (horizontal ? token.document.width : token.document.height));
 
     const w = (horizontal ? token.w : token.h) / iconsPerRow;
     const bg = effectsHUD.children[0];

@@ -2,7 +2,7 @@ import Settings, { SETTINGS_UPDATED } from './settings.js';
 
 const baselineSetPosition = TokenHUD.prototype.setPosition;
 const rescaleSetPosition = function () {
-  const td = this.object.data;
+  const td = this.object.document;
   const ratio = canvas.dimensions.size / 100;
   let scale = Settings.HUDButtonScale.get();
   if (Settings.EnableStaticSizedHUD.get()) {
