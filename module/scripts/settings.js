@@ -101,6 +101,7 @@ const Settings = {
   EffectIconsLayout: new ChoiceSetting('effectIconsLayout', 'horizontal', EffectIconLayouts, { hasHint: true }),
   HUDButtonScale: new RangeSetting('hudButtonScale', 1.0, 0.25, 5, 0.25, { hasHint: true }),
   EnableStaticSizedHUD: new BooleanSetting('enableStaticSizedHUD', true, { hasHint: true }),
+  EnableOneXOneHUD: new BooleanSetting('enableOneXOneHUD', true, { hasHint: true }),
   EnableStatusSelectorScale: new BooleanSetting('enableStatusSelectorScale', true, {
     hasHint: true,
   }),
