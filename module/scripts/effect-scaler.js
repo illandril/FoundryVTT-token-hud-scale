@@ -1,9 +1,10 @@
-import { log } from './module.js';
 import Settings, { SETTINGS_UPDATED } from './settings.js';
 
-const origDrawEffects = Token.prototype.drawEffects;
-Token.prototype.drawEffects = async function (...args) {
-  await origDrawEffects.apply(this, args);
+const origRefreshEffects = Token.prototype._refreshEffects;
+Token.prototype._refreshEffects = async function (...args) {
+  // Draw the icons the way the system wants them drawn first. For most systems this is wasteful, but for some it might be
+  // adjusting the icon positions based on something special, which we want to continue to respect.
+  await origRefreshEffects.apply(this, args);
   updateEffectScales(this);
 };
 
@@ -38,7 +39,7 @@ function countEffects(token) {
 
 function updateEffectScales(token) {
   const numEffects = countEffects(token);
-  const effectsHUD = token.hud && token.hud.effects || token.effects;
+  const effectsHUD = token.effects;
   if (numEffects > 0 && effectsHUD.children.length > 0) {
     const layout = Settings.EffectIconsLayout.get();
     const above = layout === 'above';
