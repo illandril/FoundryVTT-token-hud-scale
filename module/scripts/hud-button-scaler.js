@@ -11,8 +11,9 @@ const rescaleSetPosition = function () {
   let scale = hudButtonScale;
   if (staticSizedHUD) {
     scale /= canvas.stage.scale.x;
+  } else {
+    scale *= ratio;
   }
-  scale *= ratio;
 
   const tokenCenterX = this.object.x + td.width * ratio * 50;
   const tokenCenterY = this.object.y + td.height * ratio * 50;
