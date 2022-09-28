@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.1.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.1.2) (2022-09-28)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v2.1.1...v2.1.2)
+
+**Fixed&nbsp;Bugs**
+
+- "Static Size HUD" scale changes based on the map's grid size [\#37](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/37)
+
 ## [v2.1.1](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.1.1) (2022-09-14)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v2.1.0...v2.1.1)
