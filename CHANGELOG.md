@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.1.3](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.1.3) (2022-10-11)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v2.1.2...v2.1.3)
+
+**Fixed&nbsp;Bugs**
+
+- Conflict with Token Auras module [\#38](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/38)
+
 ## [v2.1.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.1.2) (2022-09-28)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v2.1.1...v2.1.2)
