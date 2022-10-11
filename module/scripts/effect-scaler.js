@@ -1,18 +1,12 @@
 import Settings, { SETTINGS_UPDATED } from './settings.js';
 
 const origRefreshEffects = Token.prototype._refreshEffects;
-Token.prototype._refreshEffects = async function (...args) {
+Token.prototype._refreshEffects = function (...args) {
   // Draw the icons the way the system wants them drawn first. For most systems this is wasteful, but for some it might be
   // adjusting the icon positions based on something special, which we want to continue to respect.
-  await origRefreshEffects.apply(this, args);
+  origRefreshEffects.apply(this, args);
   updateEffectScales(this);
 };
-
-Hooks.on('canvasReady', (canvas) => {
-  canvas.tokens.placeables.forEach((token) => {
-    token.drawEffects();
-  });
-});
 
 Hooks.on(SETTINGS_UPDATED, () => {
   if (canvas && canvas.tokens) {
