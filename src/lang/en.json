@@ -17,8 +17,6 @@
   "illandril-token-hud-scale.setting.enableOneXOneHUD.label": "1x1 Sized HUD",
   "illandril-token-hud-scale.setting.enableOneXOneHUD.hint": "Size the HUD as if the token was a 1x1 token, regardless of the size of the token (gives more space for HUD elements for tiny tokens, and keeps the HUD closer to the token for large tokens).",
 
-  "illandril-token-hud-scale.upgradeNotification.v2": "Illandril's Token HUD Scale has been updated. There have been significant changes to how Token HUD scaling works, so check your settings. Most will either want a Static Sized HUD with a lower (0.5-1.5) scale, or non-Static Sized HUD with a higher (1.5+) scale.",
-
   "illandril-token-hud-scale.setting.enableStatusSelectorScale.label": "Scale Status Effect Assignment Icons",
   "illandril-token-hud-scale.setting.enableStatusSelectorScale.hint": "Increases the size of the Status Effect icons shown under the Assign Status Effects button to match the size of the other Token HUD Buttons.",
 
