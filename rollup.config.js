@@ -8,7 +8,7 @@ import scss from 'rollup-plugin-scss';
 import globals, { description, repositoryURL } from './globals.js';
 
 const target = 'dist';
-const isProduction = process.env.BUILD === 'production';
+const isDevelopment = process.env.BUILD === 'development';
 
 export default {
   input: 'src/index.ts',
@@ -37,7 +37,7 @@ export default {
       buildStart: async () => {
         const manifestData = await fs.readJSON('src/manifestData.json');
 
-        return fs.writeJSON(`${target}/module.json`, Manifest.generate({
+        return fs.outputJSON(`${target}/module.json`, Manifest.generate({
           ...manifestData,
           authors: [Manifest.IllandrilAuthorInfo],
           ...globals.moduleMetadata,
@@ -49,7 +49,7 @@ export default {
     {
       name: 'lock',
       buildStart: async () => {
-        if (!isProduction) {
+        if (isDevelopment) {
           await fs.outputFile(`${target}/${globals.moduleMetadata.id}.lock`, '');
         }
       },
