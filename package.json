@@ -1,6 +1,6 @@
 {
   "name": "@illandril/foundryvtt-token-hud-scale",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Illandril's Token HUD scaler: Improves the visibility of the Token, Tile, and Drawing HUDs and Status Effect icons.",
   "type": "module",
   "scripts": {
