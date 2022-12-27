@@ -1,25 +1,43 @@
 {
-  "illandril-token-hud-scale.setting.effectIconsPerRow.label": "Effect Icons per Grid Size",
-  "illandril-token-hud-scale.setting.effectIconsPerRow.hint": "Adjusts the scale of Effect icons so that this many icons will fit in a single row or column on a 1x1 token (more will fit on larger tokens, and fewer on smaller tokens).",
-
-  "illandril-token-hud-scale.setting.effectIconsLayout.label": "Effect Icons Layout",
-  "illandril-token-hud-scale.setting.effectIconsLayout.hint": "Specify how the Effect Icons should be displayed on tokens.",
-  "illandril-token-hud-scale.setting.effectIconsLayout.choice_horizontal": "Over the token, in rows",
-  "illandril-token-hud-scale.setting.effectIconsLayout.choice_vertical": "Over the token, in columns",
-  "illandril-token-hud-scale.setting.effectIconsLayout.choice_above": "Above the token, in rows",
-
-  "illandril-token-hud-scale.setting.hudButtonScale.label": "Token HUD Buttons Scale",
-  "illandril-token-hud-scale.setting.hudButtonScale.hint": "Select the scale (multiplier relative to the default scale) of the Token HUD Buttons (Toggle Visibility, Assign Status Effects, Toggle Combat State, etc). Set to 1 to leave the scale unchanged from the default scale.",
-
-  "illandril-token-hud-scale.setting.enableStaticSizedHUD.label": "Static Sized HUD",
-  "illandril-token-hud-scale.setting.enableStaticSizedHUD.hint": "Keep the size of the HUD consistent when you zoom in and out of the scene (as opposed to getting smaller as you zoom out from the scene, and larger as you zoom in). Note: You most likely will want to reduce Token HUD Buttons Scale to something below 1.5 if you enable this setting.",
-
-  "illandril-token-hud-scale.setting.enableOneXOneHUD.label": "1x1 Sized HUD",
-  "illandril-token-hud-scale.setting.enableOneXOneHUD.hint": "Size the HUD as if the token was a 1x1 token, regardless of the size of the token (gives more space for HUD elements for tiny tokens, and keeps the HUD closer to the token for large tokens).",
-
-  "illandril-token-hud-scale.setting.enableStatusSelectorScale.label": "Scale Status Effect Assignment Icons",
-  "illandril-token-hud-scale.setting.enableStatusSelectorScale.hint": "Increases the size of the Status Effect icons shown under the Assign Status Effects button to match the size of the other Token HUD Buttons.",
-
-  "illandril-token-hud-scale.setting.darkenHUDButtonBG.label": "Darken Token HUD Backgrounds",
-  "illandril-token-hud-scale.setting.darkenHUDButtonBG.hint": "Reduces the opacity of the Token HUD button background color to improve contrast."
+  "illandril-token-hud-scale": {
+    "setting": {
+      "effectIconsPerRow": {
+        "label": "Effect Icons per Grid Size",
+        "hint": "Adjusts the scale of Effect icons so that this many icons will fit in a single row or column on a 1x1 token (more will fit on larger tokens, and fewer on smaller tokens)."
+      },
+    
+      "effectIconsLayout": {
+        "label": "Effect Icons Layout",
+        "hint": "Specify how the Effect Icons should be displayed on tokens.",
+        "choice": {
+          "horizontal": "Over the token, in rows",
+          "vertical": "Over the token, in columns",
+          "above": "Above the token, in rows"
+        }
+      },
+      "enableStatusSelectorScale": {
+        "label": "Scale Assign Status Effect Icons",
+        "hint": "Increases the size of the Status Effect icons shown under the Assign Status Effects button to match the size of the other Token HUD Buttons."
+      },
+      "hudButtonScale": {
+        "label": "HUD Buttons Scale",
+        "hint": "Select the scale (multiplier relative to the default scale) of the Placeables HUD Buttons. Placeables include Tokens, Tiles, and Drawings. For Tokens, the buttons include Toggle Visibility, Assign Status Effects, Toggle Combat State, etc. Set to 1 to leave the scale unchanged from the default scale."
+      },
+      "enableStaticSizedHUD": {
+        "label": "Static Sized HUDs",
+        "hint": "Keep the size of the HUDs consistent when you zoom in and out of the scene (as opposed to getting smaller as you zoom out from the scene, and larger as you zoom in). Note: You most likely will want to reduce HUD Buttons Scale to something below 1.5 if you enable this setting."
+      },
+      "enableOneXOneHUD": {
+        "label": "1x1 Sized HUDs",
+        "hint": "Size the HUDs as if the placeable (Drawing / Tile / Token) took up exactly one grid square/hex, regardless of its size (gives more space for HUD elements for tiny objects, and keeps the HUD closer to the token for large objects)."
+      },
+      "darkenHUDButtonBG": {
+        "label": "Darken HUD Button Backgrounds",
+        "hint": "Reduces the opacity of the HUD button background color to improve contrast."
+      },
+      "centerHUDButtons": {
+        "label": "Center Tile and Drawing HUD Buttons"
+      }
+    }
+  }
 }

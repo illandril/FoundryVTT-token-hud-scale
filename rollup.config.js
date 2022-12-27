@@ -4,6 +4,7 @@ import { babel } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import fs from 'fs-extra';
 import copy from 'rollup-plugin-copy';
+import scss from 'rollup-plugin-scss';
 import globals, { description, repositoryURL } from './globals.js';
 
 const target = 'dist';
@@ -24,9 +25,9 @@ export default {
       babelHelpers: 'bundled',
       extensions: ['.js', '.ts'],
     }),
+    scss({ fileName: 'styles.css' }),
     copy({
       targets: [
-        { src: 'src/styles.css', dest: target },
         { src: 'src/lang', dest: target },
         { src: 'LICENSE', dest: target },
       ],

@@ -1,0 +1,12 @@
+.illandril-token-hud-scale--center-hud-buttons {
+  #tile-hud,
+  #drawing-hud {
+    display: flex;
+    align-items: center;
+
+    & > .col {
+      height: auto;
+      min-height: 100%;
+    }
+  }
+}

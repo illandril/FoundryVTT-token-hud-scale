@@ -8,6 +8,7 @@ declare global {
       'illandril-token-hud-scale.enableOneXOneHUD': boolean
       'illandril-token-hud-scale.enableStatusSelectorScale': boolean
       'illandril-token-hud-scale.darkenHUDButtonBG': boolean
+      'illandril-token-hud-scale.centerHUDButtons': boolean
     }
   }
 }

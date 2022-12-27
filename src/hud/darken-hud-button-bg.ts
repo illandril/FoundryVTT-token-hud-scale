@@ -1,4 +1,5 @@
-import module from './module';
+import module from '../module';
+import './darken-hud-button-bg.scss';
 
 const CSS_HUD_BUTTON_BG = module.cssPrefix.child('darken-hud-button-bg');
 

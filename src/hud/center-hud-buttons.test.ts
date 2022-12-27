@@ -5,9 +5,9 @@ const chance = new Chance();
 
 const randomOtherClass = chance.string({ alpha: true });
 
-const expectedCSSClass = 'illandril-token-hud-scale--darken-hud-button-bg';
+const expectedCSSClass = 'illandril-token-hud-scale--center-hud-buttons';
 
-let module: typeof import('./module').default;
+let module: typeof import('../module').default;
 let registerSpy: jest.SpyInstance;
 const mockGet = jest.fn();
 let refresh: () => void;
@@ -17,7 +17,7 @@ const loadModule = async (initialState: boolean) => {
   document.body.classList.add(randomOtherClass);
 
   mockGet.mockReturnValue(initialState);
-  module = (await import('./module')).default;
+  module = (await import('../module')).default;
   registerSpy = jest.spyOn(module.settings, 'register').mockImplementation((_namespace, _type, _defaultValue, options) => {
     refresh = options?.onChange as () => void;
     return {
@@ -25,7 +25,7 @@ const loadModule = async (initialState: boolean) => {
     };
   });
 
-  await import('./darken-hud-button-bg');
+  await import('./center-hud-buttons');
 
   jest.resetModules();
 };
@@ -33,8 +33,8 @@ const loadModule = async (initialState: boolean) => {
 it('registers darkenHUDButtonBG setting', async () => {
   await loadModule(true);
 
-  expect(registerSpy).toBeCalledWith('darkenHUDButtonBG', Boolean, true, {
-    hasHint: true, onChange: expect.any(Function) as unknown,
+  expect(registerSpy).toBeCalledWith('centerHUDButtons', Boolean, true, {
+    onChange: expect.any(Function) as unknown,
   });
 });
 
@@ -100,27 +100,3 @@ describe('when disabled', () => {
     expect(document.body).toHaveClass('vtt', 'game', randomOtherClass);
   });
 });
-
-// it('registers darkenHUDButtonBG setting', async () => {
-//   await import('./darken-hud-button-bg');
-
-//   expect(registerSpy).toBeCalledWith('darkenHUDButtonBG', Boolean, true, {
-//     hasHint: true, onChange: expect.any(Function),
-//   });
-// });
-
-
-
-// const CSS_HUD_BUTTON_BG = module.cssPrefix.child('darken-hud-button-bg');
-
-// const refresh = () => {
-//   if (darkenHUDSetting.get()) {
-//     document.body.classList.add(CSS_HUD_BUTTON_BG);
-//   } else {
-//     document.body.classList.remove(CSS_HUD_BUTTON_BG);
-//   }
-// };
-
-// const darkenHUDSetting = module.settings.register('darkenHUDButtonBG', Boolean, true, { hasHint: true, onChange: refresh });
-
-// Hooks.on('init', refresh);

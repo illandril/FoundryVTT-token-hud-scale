@@ -1,0 +1,12 @@
+.illandril-token-hud-scale--darken-hud-button-bg {
+  .placeable-hud .control-icon {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  #token-hud {
+    .status-effects,
+    .attribute input {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+}

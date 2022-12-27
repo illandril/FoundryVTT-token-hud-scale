@@ -1,4 +1,5 @@
-import module from './module';
+import module from '../module';
+import './status-selector-scaler.scss';
 
 const CSS_STATUS_SLECTOR_SCALE = module.cssPrefix.child('status-selector-scale');
 
