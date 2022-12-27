@@ -1,5 +1,9 @@
 # Changelog
 
+## [v2.2.0](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.2.0) (2022-12-27)
+
+[Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v2.1.3...v2.2.0)
+
 ## [v2.1.3](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.1.3) (2022-10-11)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v2.1.2...v2.1.3)
@@ -11,6 +15,10 @@
 ## [v2.1.2](https://github.com/illandril/FoundryVTT-token-hud-scale/tree/v2.1.2) (2022-09-28)
 
 [Full Changelog](https://github.com/illandril/FoundryVTT-token-hud-scale/compare/v2.1.1...v2.1.2)
+
+**Enhancements**
+
+- \[Feature Request\] Extend the feature "HUD Button Scaler" for work with other placeable objects [\#41](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/41)
 
 **Fixed&nbsp;Bugs**
 
@@ -139,6 +147,10 @@
 
 - Request for more token HUD Scaling [\#13](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/13)
 
+**Fixed&nbsp;Bugs**
+
+- Issue in 0.7.8, with tokens receiving multiple conditions in PF2 [\#8](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/8)
+
 **Other&nbsp;Changes**
 
 - Bugs out when also using Thandul's Togglable Effects [\#10](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/10)
@@ -158,7 +170,6 @@
 **Fixed&nbsp;Bugs**
 
 - Status icons flicker as the default size before being replaced by the resized versions [\#11](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/11)
-- Issue in 0.7.8, with tokens receiving multiple conditions in PF2 [\#8](https://github.com/illandril/FoundryVTT-token-hud-scale/issues/8)
 
 **Other&nbsp;Changes**
 
