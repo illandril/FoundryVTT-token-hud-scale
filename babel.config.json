@@ -16,5 +16,6 @@
       "builtIns": false,
       "mangle": true
     }]
-  ]
+  ],
+  "comments": false
 }
