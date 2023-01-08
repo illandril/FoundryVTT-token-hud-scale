@@ -1,11 +1,14 @@
 {
   "illandril-token-hud-scale": {
     "setting": {
+      "debug": {
+        "label": "Debug Mode",
+        "hint": "Leave this disabled unless specifically asked to enable it by Illandril (otherwise, it will slow things down)."
+      },
       "effectIconsPerRow": {
         "label": "Effect Icons per Grid Size",
         "hint": "Adjusts the scale of Effect icons so that this many icons will fit in a single row or column on a 1x1 token (more will fit on larger tokens, and fewer on smaller tokens)."
       },
-    
       "effectIconsLayout": {
         "label": "Effect Icons Layout",
         "hint": "Specify how the Effect Icons should be displayed on tokens.",
