@@ -2,7 +2,7 @@ import module from '../module';
 
 const refresh = () => {
   game.canvas?.tokens?.placeables.forEach((token) => {
-    token.drawEffects();
+    void token.drawEffects();
   });
 };
 

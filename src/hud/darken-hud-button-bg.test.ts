@@ -22,6 +22,9 @@ const loadModule = async (initialState: boolean) => {
     refresh = options?.onChange as () => void;
     return {
       get: mockGet,
+      set: () => {
+        throw new Error('Not expected to be called');
+      },
     };
   });
 

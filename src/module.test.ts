@@ -1,6 +1,6 @@
-import { Module } from '@illandril/foundryvtt-utils';
+import { ModuleUtils } from '@illandril/foundryvtt-utils';
 import module from './module';
 
-it('is a Module instance', () => {
-  expect(module).toBeInstanceOf(Module);
+it('is a ModuleUtils instance', () => {
+  expect(module).toBeInstanceOf(ModuleUtils);
 });
