@@ -31,13 +31,12 @@ Token.prototype._refreshEffects = function (...args) {
 };
 
 const countEffects = (token: Token) => {
-  if (!token) {
-    return 0;
-  }
-  let numEffects = token.document.effects?.length || 0;
-  for (const actorEffect of token.actor.temporaryEffects) {
-    if (!actorEffect.getFlag('core', 'overlay')) {
-      numEffects++;
+  let numEffects = 0;
+  if (token.actor?.temporaryEffects) {
+    for (const actorEffect of token.actor.temporaryEffects) {
+      if (!actorEffect.getFlag('core', 'overlay')) {
+        numEffects++;
+      }
     }
   }
   return numEffects;
@@ -87,15 +86,17 @@ const updateEffectScales = (token: Token) => {
     );
 
     const width = (horizontal ? token.bounds.width : token.bounds.height) / iconsPerRow;
-    const background = token.effects.children[0];
+    const background = token.effects.bg;
     if (!(background instanceof PIXI.Graphics)) {
-      module.logger.warn('token.effects.children[0] was not a PIXI.Graphics instance', background);
+      module.logger.warn('token.effects.bg was not a PIXI.Graphics instance', background);
       return;
     }
     background.clear().beginFill(0x000000, 0.6).lineStyle(1.0, 0x000000);
 
     // Exclude the background and overlay
-    const effectIcons = token.effects.children.slice(1, 1 + numEffects);
+    const effectIcons = token.effects.children.filter(
+      (value) => value !== token.effects.bg && value !== token.effects.overlay,
+    );
 
     // Effect icons aren't necessarily in the order they appear... sort them so they are
     // (Order is very important in some cases, like GURPS manuevers - see Issue #26)
