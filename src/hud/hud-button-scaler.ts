@@ -13,15 +13,18 @@ const refresh = foundry.utils.debounce(() => {
 }, 100);
 
 const enableStaticSizedHUDSetting = module.settings.register('enableStaticSizedHUD', Boolean, true, {
-  hasHint: true, onChange: refresh,
+  hasHint: true,
+  onChange: refresh,
 });
 
 const enableOneXOneHUDSetting = module.settings.register('enableOneXOneHUD', Boolean, true, {
-  hasHint: true, onChange: refresh,
+  hasHint: true,
+  onChange: refresh,
 });
 
 const hudButtonScaleSetting = module.settings.register('hudButtonScale', Number, 1, {
-  hasHint: true, onChange: refresh,
+  hasHint: true,
+  onChange: refresh,
   range: { min: 0.25, max: 5, step: 0.25 },
 });
 
@@ -30,11 +33,11 @@ const BASE_TILE_SIZE = 100;
 const HALF_BASE_TILE_SIZE = BASE_TILE_SIZE / 2;
 
 type PositionCSS = {
-  width: number
-  height: number
-  left: number
-  top: number
-  transform?: string
+  width: number;
+  height: number;
+  left: number;
+  top: number;
+  transform?: string;
 };
 
 const calculateScale = (hudButtonScale: number, staticSizedHUD: boolean, tileSize: number) => {
@@ -49,7 +52,8 @@ const calculateScale = (hudButtonScale: number, staticSizedHUD: boolean, tileSiz
 
 const getPositionCSS = (
   center: PIXI.Point,
-  widthInTiles: number, heightInTiles: number,
+  widthInTiles: number,
+  heightInTiles: number,
   scale: number,
   addColumnWidth?: boolean,
 ) => {
@@ -70,15 +74,18 @@ const getPositionCSS = (
   return positionCSS;
 };
 
-const extendSetPosition = <T extends typeof TokenHUD | typeof TileHUD | typeof DrawingHUD>(hudClass: T, addColumnWidth?: boolean) => {
+const extendSetPosition = <T extends typeof TokenHUD | typeof TileHUD | typeof DrawingHUD>(
+  hudClass: T,
+  addColumnWidth?: boolean,
+) => {
   const originalSetPosition = hudClass.prototype.setPosition;
 
-  hudClass.prototype.setPosition = function(...args) {
+  hudClass.prototype.setPosition = function (...args) {
     const hudButtonScale = hudButtonScaleSetting.get();
     const staticSizedHUD = enableStaticSizedHUDSetting.get();
     const oneByOneHUD = enableOneXOneHUDSetting.get();
 
-    if (!oneByOneHUD && !staticSizedHUD && hudButtonScale === 1 || !this.object) {
+    if ((!oneByOneHUD && !staticSizedHUD && hudButtonScale === 1) || !this.object) {
       originalSetPosition.apply(this, args);
       return;
     }
@@ -91,12 +98,7 @@ const extendSetPosition = <T extends typeof TokenHUD | typeof TileHUD | typeof D
     const widthInTiles = oneByOneHUD ? hudButtonScale : width / tileSize;
     const heightInTiles = oneByOneHUD ? hudButtonScale : height / tileSize;
 
-    this.element.css(getPositionCSS(
-      this.object.center,
-      widthInTiles, heightInTiles,
-      scale,
-      addColumnWidth,
-    ));
+    this.element.css(getPositionCSS(this.object.center, widthInTiles, heightInTiles, scale, addColumnWidth));
   };
 };
 

@@ -1,4 +1,3 @@
-
 import Chance from 'chance';
 
 const chance = new Chance();
@@ -18,15 +17,17 @@ const loadModule = async (initialState: boolean) => {
 
   mockGet.mockReturnValue(initialState);
   module = (await import('../module')).default;
-  registerSpy = jest.spyOn(module.settings, 'register').mockImplementation((_namespace, _type, _defaultValue, options) => {
-    refresh = options?.onChange as () => void;
-    return {
-      get: mockGet,
-      set: () => {
-        throw new Error('Not expected to be called');
-      },
-    };
-  });
+  registerSpy = jest
+    .spyOn(module.settings, 'register')
+    .mockImplementation((_namespace, _type, _defaultValue, options) => {
+      refresh = options?.onChange as () => void;
+      return {
+        get: mockGet,
+        set: () => {
+          throw new Error('Not expected to be called');
+        },
+      };
+    });
 
   await import('./center-hud-buttons');
 

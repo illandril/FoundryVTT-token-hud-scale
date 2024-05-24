@@ -11,6 +11,9 @@ const refresh = () => {
   }
 };
 
-const darkenHUDSetting = module.settings.register('darkenHUDButtonBG', Boolean, true, { hasHint: true, onChange: refresh });
+const darkenHUDSetting = module.settings.register('darkenHUDButtonBG', Boolean, true, {
+  hasHint: true,
+  onChange: refresh,
+});
 
 Hooks.on('init', refresh);

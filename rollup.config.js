@@ -1,5 +1,4 @@
-/* eslint-disable import/no-named-as-default-member */
-import * as Manifest from '@illandril/foundryvtt-utils/dist/Manifest.js';
+import * as Manifest from '@illandril/foundryvtt-utils/manifest';
 import { babel } from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import fs from 'fs-extra';
@@ -15,7 +14,9 @@ export default {
   output: {
     file: `${target}/module.js`,
     format: 'es',
-    banner: Object.entries(globals).map(([key, value]) => `const ${key} = ${JSON.stringify(value)};\n`).join(''),
+    banner: Object.entries(globals)
+      .map(([key, value]) => `const ${key} = ${JSON.stringify(value)};\n`)
+      .join(''),
     sourcemap: isDevelopment,
     sourcemapPathTransform: (sourcePath) => sourcePath.replace(/^..[/\\]?/, ''),
   },
@@ -37,13 +38,17 @@ export default {
       buildStart: async () => {
         const manifestData = await fs.readJSON('src/manifestData.json');
 
-        return fs.outputJSON(`${target}/module.json`, Manifest.generate({
-          ...manifestData,
-          authors: [Manifest.IllandrilAuthorInfo],
-          ...globals.moduleMetadata,
-          description,
-          repositoryURL,
-        }), { spaces: 2 });
+        return fs.outputJSON(
+          `${target}/module.json`,
+          Manifest.generate({
+            ...manifestData,
+            authors: [Manifest.IllandrilAuthorInfo],
+            ...globals.moduleMetadata,
+            description,
+            repositoryURL,
+          }),
+          { spaces: 2 },
+        );
       },
     },
     {
@@ -56,4 +61,3 @@ export default {
     },
   ],
 };
-

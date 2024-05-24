@@ -1,24 +1,27 @@
 import module from '../module';
 
 const refresh = () => {
-  game.canvas?.tokens?.placeables.forEach((token) => {
-    void token.drawEffects();
-  });
+  if (game.canvas.tokens?.placeables) {
+    for (const token of game.canvas.tokens.placeables) {
+      void token.drawEffects();
+    }
+  }
 };
 
 const effectIconsLayoutSetting = module.settings.register('effectIconsLayout', String, 'horizontal', {
-  hasHint: true, onChange: refresh,
+  hasHint: true,
+  onChange: refresh,
   choices: ['horizontal', 'vertical', 'above'],
 });
 
 const effectIconsPerRowSetting = module.settings.register('effectIconsPerRow', Number, 3, {
-  hasHint: true, onChange: refresh,
+  hasHint: true,
+  onChange: refresh,
   range: { min: 2, max: 10, step: 1 },
 });
 
-// eslint-disable-next-line @typescript-eslint/unbound-method
 const origRefreshEffects = Token.prototype._refreshEffects;
-Token.prototype._refreshEffects = function(...args) {
+Token.prototype._refreshEffects = function (...args) {
   // Draw the icons the way the system wants them drawn first. For most systems this is wasteful, but for some it might be
   // adjusting the icon positions based on something special, which we want to continue to respect.
   origRefreshEffects.apply(this, args);
@@ -32,11 +35,11 @@ const countEffects = (token: Token) => {
     return 0;
   }
   let numEffects = token.document.effects?.length || 0;
-  token.actor?.temporaryEffects?.forEach((actorEffect) => {
+  for (const actorEffect of token.actor.temporaryEffects) {
     if (!actorEffect.getFlag('core', 'overlay')) {
       numEffects++;
     }
-  });
+  }
   return numEffects;
 };
 
@@ -52,8 +55,14 @@ const updateIconSize = (effectIcon: PIXI.Sprite, width: number) => {
   effectIcon.height = width;
 };
 
-const updateIconPosition = (effectIcon: PIXI.Sprite, i: number, iconsPerRow: number, horizontal: boolean, above: boolean) => {
-  const x = i % iconsPerRow * effectIcon.width;
+const updateIconPosition = (
+  effectIcon: PIXI.Sprite,
+  i: number,
+  iconsPerRow: number,
+  horizontal: boolean,
+  above: boolean,
+) => {
+  const x = (i % iconsPerRow) * effectIcon.width;
   let y = Math.floor(i / iconsPerRow) * effectIcon.width;
   if (above) {
     y = y * -1 - effectIcon.width;
@@ -64,13 +73,7 @@ const updateIconPosition = (effectIcon: PIXI.Sprite, i: number, iconsPerRow: num
 };
 
 const drawBG = (effectIcon: PIXI.Sprite, background: PIXI.Graphics) => {
-  background.drawRoundedRect(
-    effectIcon.position.x,
-    effectIcon.position.y,
-    effectIcon.width,
-    effectIcon.width,
-    2,
-  );
+  background.drawRoundedRect(effectIcon.position.x, effectIcon.position.y, effectIcon.width, effectIcon.width, 2);
 };
 
 const updateEffectScales = (token: Token) => {
@@ -79,7 +82,9 @@ const updateEffectScales = (token: Token) => {
     const layout = effectIconsLayoutSetting.get();
     const above = layout === 'above';
     const horizontal = above || layout === 'horizontal';
-    const iconsPerRow = Math.ceil(effectIconsPerRowSetting.get() * (horizontal ? token.document.width : token.document.height));
+    const iconsPerRow = Math.ceil(
+      effectIconsPerRowSetting.get() * (horizontal ? token.document.width : token.document.height),
+    );
 
     const width = (horizontal ? token.bounds.width : token.bounds.height) / iconsPerRow;
     const background = token.effects.children[0];
@@ -87,10 +92,7 @@ const updateEffectScales = (token: Token) => {
       module.logger.warn('token.effects.children[0] was not a PIXI.Graphics instance', background);
       return;
     }
-    background
-      .clear()
-      .beginFill(0x000000, 0.6)
-      .lineStyle(1.0, 0x000000);
+    background.clear().beginFill(0x000000, 0.6).lineStyle(1.0, 0x000000);
 
     // Exclude the background and overlay
     const effectIcons = token.effects.children.slice(1, 1 + numEffects);

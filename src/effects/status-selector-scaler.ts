@@ -11,6 +11,9 @@ const refresh = () => {
   }
 };
 
-const enableStatusSelectorScale = module.settings.register('enableStatusSelectorScale', Boolean, true, { hasHint: true, onChange: refresh });
+const enableStatusSelectorScale = module.settings.register('enableStatusSelectorScale', Boolean, true, {
+  hasHint: true,
+  onChange: refresh,
+});
 
 Hooks.on('init', refresh);
