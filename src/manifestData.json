@@ -20,6 +20,10 @@
   "license": "LICENSE",
   "media": [
     {
+      "type": "setup",
+      "url": "https://github.com/illandril/FoundryVTT-token-hud-scale/raw/main/screenshots/setup.png"
+    },
+    {
       "type": "cover",
       "url": "https://github.com/illandril/FoundryVTT-token-hud-scale/raw/main/screenshots/cover.png"
     },
