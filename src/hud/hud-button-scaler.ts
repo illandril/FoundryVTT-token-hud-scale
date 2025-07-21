@@ -74,7 +74,12 @@ const getPositionCSS = (
   return positionCSS;
 };
 
-const extendSetPosition = <T extends typeof TokenHUD | typeof TileHUD | typeof DrawingHUD>(
+const extendSetPosition = <
+  T extends
+    | typeof foundry.applications.hud.DrawingHUD
+    | typeof foundry.applications.hud.TileHUD
+    | typeof foundry.applications.hud.TokenHUD,
+>(
   hudClass: T,
   addColumnWidth?: boolean,
 ) => {
@@ -87,7 +92,7 @@ const extendSetPosition = <T extends typeof TokenHUD | typeof TileHUD | typeof D
 
     if ((!oneByOneHUD && !staticSizedHUD && hudButtonScale === 1) || !this.object) {
       originalSetPosition.apply(this, args);
-      return;
+      return undefined;
     }
 
     const tileSize = game.canvas.dimensions?.size || BASE_TILE_SIZE;
@@ -98,14 +103,21 @@ const extendSetPosition = <T extends typeof TokenHUD | typeof TileHUD | typeof D
     const widthInTiles = oneByOneHUD ? hudButtonScale : width / tileSize;
     const heightInTiles = oneByOneHUD ? hudButtonScale : height / tileSize;
 
-    this.element.css(getPositionCSS(this.object.center, widthInTiles, heightInTiles, scale, addColumnWidth));
+    const css = getPositionCSS(this.object.center, widthInTiles, heightInTiles, scale, addColumnWidth);
+
+    this.element.style.width = `${css.width}px`;
+    this.element.style.height = `${css.height}px`;
+    this.element.style.top = `${css.top}px`;
+    this.element.style.left = `${css.left}px`;
+    this.element.style.transform = css.transform ?? '';
+    return undefined;
   };
 };
 
 Hooks.on('init', () => {
-  extendSetPosition(TokenHUD);
-  extendSetPosition(TileHUD, true);
-  extendSetPosition(DrawingHUD, true);
+  extendSetPosition(foundry.applications.hud.TokenHUD);
+  extendSetPosition(foundry.applications.hud.TileHUD, true);
+  extendSetPosition(foundry.applications.hud.DrawingHUD, true);
 });
 
 Hooks.on('canvasPan', refresh);

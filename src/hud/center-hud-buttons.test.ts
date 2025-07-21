@@ -37,7 +37,7 @@ const loadModule = async (initialState: boolean) => {
 it('registers darkenHUDButtonBG setting', async () => {
   await loadModule(true);
 
-  expect(registerSpy).toBeCalledWith('centerHUDButtons', Boolean, true, {
+  expect(registerSpy).toHaveBeenCalledWith('centerHUDButtons', Boolean, true, {
     onChange: expect.any(Function) as unknown,
   });
 });

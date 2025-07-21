@@ -37,7 +37,7 @@ const loadModule = async (initialState: boolean) => {
 it('registers darkenHUDButtonBG setting', async () => {
   await loadModule(true);
 
-  expect(registerSpy).toBeCalledWith('darkenHUDButtonBG', Boolean, true, {
+  expect(registerSpy).toHaveBeenCalledWith('darkenHUDButtonBG', Boolean, true, {
     hasHint: true,
     onChange: expect.any(Function) as unknown,
   });
